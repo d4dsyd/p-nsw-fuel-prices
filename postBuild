@@ -1,0 +1,3 @@
+cp "./notebooks/1. Data Acquisition.ipynb" "./lib/preloader.ipynb"
+python ./lib/preload_data.py
+rm  "./lib/preloader.ipynb"
