@@ -1,3 +1,18 @@
-cp "./notebooks/1. Data Acquisition.ipynb" "./preloader.ipynb"
+echo " ---> Creating temp directory"
+mkdir ./temp
+
+echo " ---> Making temporary copy of relevant notebook"
+cp "./notebooks/1. Data Acquisition.ipynb" "./temp/preloader.ipynb"
+
+echo " ---> Changing to temp directory"
+cd temp
+
+echo " ---> Running notebook to preload data"
 python -c "import ipynb.fs.full.preloader"
-rm  "./preloader.ipynb"
+
+echo " ---> Changing back to root directory"
+cd ..
+
+echo " ---> Cleaning up"
+rm  "./temp/preloader.ipynb"
+rmdir ./temp
